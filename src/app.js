@@ -10,12 +10,24 @@ function greet(name) {
         }
         else{
             let greet = "Hello, ";
+            let upperGreet= " AND HELLO "
+            const upperArray = [];
+            const lowerArray = [];
             for (let i = 0; i < name.length; i++) {
-                greet+= name[i];
-                if(i==name.length-1){
+                if (name[i]== name[i].toUpperCase()){
+                    upperArray.push(name[i]);
+                }  
+                else{
+                    lowerArray.push(name[i]);
+                }
+            }
+
+            for (let i = 0; i < lowerArray.length; i++) {
+                greet+= lowerArray[i];
+                if(i==lowerArray.length-1){
                     greet+=".";
                 }
-                else if(i==name.length-2){
+                else if(i==lowerArray.length-2){
                     greet+=" and ";
 
                 }
@@ -23,7 +35,24 @@ function greet(name) {
                     greet+=", ";
                 }
                 
+            }            
+            
+            for (let i = 0; i < upperArray.length; i++) {
+                upperGreet+= upperArray[i];
+                if(i==upperArray.length-1){
+                    upperGreet+=".";
+                }
+                else if(i==upperArray.length-2){
+                    upperGreet+=" AND ";
+
+                }
+                else{
+                    upperGreet+=", ";
+                }
+                
             }
+            if(upperArray.length>0) return greet+upperGreet;
+
             return greet;
         }
     }
