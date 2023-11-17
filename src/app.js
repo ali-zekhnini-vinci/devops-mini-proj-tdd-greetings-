@@ -10,7 +10,7 @@ function greet(name) {
         }
         else{
             let greet = "Hello, ";
-            for (let index = 0; index < name.length; index++) {
+            for (let i = 0; i < name.length; i++) {
                 greet+= name[i];
                 if(i==name.length-1){
                     greet+=".";
